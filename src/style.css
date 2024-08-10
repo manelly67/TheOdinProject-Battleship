@@ -1,23 +1,25 @@
-/* media view for big screens */
+/* media view   */
 
-@media screen and (min-width: 481px) {
+main {
+    
+  display: flex;
+flex-direction:row;
 
-body {
-    margin: 0;
-    padding: 0;
-    border: 0px solid transparent;
+  flex-wrap: wrap;
+justify-content: flex-start;
 }
 
+div {
+  flex-basis: 100%;
+} 
+
+@media screen and (min-width: 481px) {
 .container {
     display: grid;
     grid-template-columns: 0.5fr 6.5fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
     background-color: #353a45;
     height: 600px;
-  }
-  
-  .hide {
-    display: none;
   }
 
   .turn {
@@ -37,17 +39,10 @@ body {
 
   .addships {
       grid-column: 2 / 3;      /* grid turn*/
-      grid-row: 1 / 2;        /* only one between addShips and newGame is showed*/
+      grid-row: 1 / 2;       
       padding-top: 2%;
   }
 
-  .newGame {
-    grid-column: 2 / 3;      /* grid turn*/
-    grid-row: 1 / 2;        /* only one between addShips and newGame is showed*/
-    padding-top: 2%;
-  }
-
- 
   .randomships {              /* grid turn*/
     grid-column: 3 / 4;
     grid-row: 1 / 2;
@@ -69,7 +64,6 @@ body {
   font-weight: 600;
   color: lightyellow;
 }
-
 
   .gridForAdd {
         grid-column-start: 4;   /* esta linea se asocia al grid del board */
@@ -116,7 +110,6 @@ body {
     padding-right: 10%;
     }
 
-
   .board-human {
       grid-column: 2/3;   /* esta linea se asocia al grid del board */
       grid-row: 2/3;      /* esta linea se asocia al grid del board */
@@ -144,94 +137,4 @@ body {
         padding: 2px;
         background-color: #edeef1; 
       }
-    
-    .cell {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 0.7rem;
-      border: 1px solid grey;
-      background: lightyellow;
-      cursor: pointer;
     }
-
-    .cellShipAdded {
-        background-color: #5be734; 
-        color: #207d0e;
-        font-size: 8px
-    }
-
-    .cellMissed {
-        background-color: #effefb; 
-        color: #087b7d;
-        font-size: 8px
-    }
-
-    .cellHit {
-        background-color: #fea173; 
-        color: #9b1b11;
-        font-size: 9px
-    }
-
-    .cellSunk {
-        background-color: black; 
-        color: white;
-        font-size: 9px
-    }
-
-   [class^='cell']:hover{
-    background-color: #545e75;
-      }
-
-   [class^='cell']:active{
-        background-color: #b2b9c7;
-      }
-  
-  
-  .newGameButton { 
-       
-      color: black; line-height: 13px; padding: 15px; 
-      border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
-      font-style: normal; font-variant: normal; text-transform: none; 
-      background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
-      box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
-  }
-  .newGameButton:hover {
-      background: #545e75; color: white; }
-  .newGameButton:active {
-      background: #454d5f; color: white; }
-
-
-
-.addShipButton {
-       
-    color: black; line-height: 2rem; padding: 15px; 
-    border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
-    font-style: normal; font-variant: normal; text-transform: none; 
-    background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
-    box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
-}
-.addShipButton:hover {
-    background: #545e75; color: white; }
-.addShipButton:active {
-    background: #454d5f; color: white; }
-
-  /* This is the style of our error messages */
-  .error {
-	width: 100%;
-	padding: 0;
-  
-	font-size: 1rem;
-	color: white;
-	background-color: #900;
-	border-radius: 0 0 5px 5px;
-  
-	box-sizing: border-box;
-  }
-  
-  .error.active {
-	padding: 0.3em;
-  }
-
-}

@@ -48,5 +48,95 @@ table {
 	border-spacing: 0;
 }
 
-/* hasta aqui el reseteo de los estilos prediseñados de los buscadores
-*/
+/* end of reset of style browser */
+
+/* cells  */
+.cell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 0.7rem;
+	border: 1px solid grey;
+	background: lightyellow;
+	cursor: pointer;
+  }
+
+  .cellShipAdded {
+	  background-color: #5be734; 
+	  color: #207d0e;
+	  font-size: 8px
+  }
+
+  .cellMissed {
+	  background-color: #effefb; 
+	  color: #087b7d;
+	  font-size: 8px
+  }
+
+  .cellHit {
+	  background-color: #fea173; 
+	  color: #9b1b11;
+	  font-size: 9px
+  }
+
+  .cellSunk {
+	  background-color: black; 
+	  color: white;
+	  font-size: 9px
+  }
+
+ [class^='cell']:hover{
+  background-color: #545e75;
+	}
+
+ [class^='cell']:active{
+	  background-color: #b2b9c7;
+	}
+
+/* buttons */
+.hide {
+	display: none;
+  }
+
+.addShipButton {       
+    color: black; line-height: 2rem; padding: 15px; 
+    border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+    font-style: normal; font-variant: normal; text-transform: none; 
+    background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
+    box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
+}
+.addShipButton:hover {
+    background: #545e75; color: white; }
+.addShipButton:active {
+    background: #454d5f; color: white; }
+
+.resetButton {    
+	color: #012e32; line-height: 13px; padding: 15px;
+	border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
+	font-style: normal; font-variant: normal; text-transform: none; 
+	background-image: linear-gradient(to right, #b9fef6 0%, #09c3c1 100%) ; 
+	box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
+}
+.resetButton:hover {
+	background: #545e75; color: white; }
+.resetButton:active {
+	background: #454d5f; color: white; }
+	 
+/* This is the style of our error messages */
+	  .error {
+		width: 100%;
+		padding: 0;
+	  
+		font-size: 1rem;
+		color: white;
+		background-color: #900;
+		border-radius: 0 0 5px 5px;
+	  
+		box-sizing: border-box;
+	  }
+	  
+	  .error.active {
+		padding: 0.3em;
+	  }
+	

@@ -21,6 +21,7 @@ function screenController(arg) {
         const result = document.createElement('div');
         const humanBoard = document.createElement('div');
         const computerBoard = document.createElement('div');
+        const resetButton = document.createElement('button');
     
         gameContainer.classList.add('container');
         turn.classList.add('turn');
@@ -30,7 +31,9 @@ function screenController(arg) {
         result.classList.add('result');
         humanBoard.classList.add('board-human');
         computerBoard.classList.add('hide');
-
+        resetButton.setAttribute('style','grid-row:3/4; grid-column:1/2');
+        resetButton.classList.add('resetButton');
+        resetButton.textContent = 'RESET for NEW GAME';
 
     const initialScreen = () => {
         
@@ -217,9 +220,16 @@ function screenController(arg) {
             div.remove();
          }
 
+         // eventlistener for reset
+         resetButton.addEventListener('click',newDoc);
+
+         function newDoc() {
+            window.location.assign("https://manelly67.github.io/TheOdinProject-Battleship/")
+          }
 
     gameContainer.appendChild(turn);
     gameContainer.appendChild(boardDiv); 
+    gameContainer.appendChild(resetButton);
     turn.appendChild(turnDiv);
     turn.appendChild(result);
     turn.appendChild(waitTurn);
