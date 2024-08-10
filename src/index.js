@@ -1,19 +1,15 @@
 import _ from 'lodash'; 
+import './style-base.css';
 import './style.css';
-import { Gameboard } from './components/gameboard.js';
+import { screenController } from './components/screen-controller.js';
 
+function component() { 
+    const gameContainer = document.createElement('div');
+    gameContainer.setAttribute('id','container');
+    screenController(gameContainer);
 
-
-function component() {
-    const element = document.createElement('div');
-  
-     // Lodash, now imported by this script   
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-
-
-
-    return element;
+   
+    return gameContainer;
   }
   
-  document.body.appendChild(component());
+document.body.appendChild(component());

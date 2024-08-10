@@ -63,6 +63,7 @@ class Gameboard {
         let reverseString = array.map((x)=> x.split(','));
         let arrayInBoard = reverseString.map( (values) => shiftCoordinates(values));
         arrayInBoard.map(([x,y]) => this.board[x][y].value = 1 );
+        return this.board;
     }
 
 
@@ -96,8 +97,6 @@ class Gameboard {
                                 this.allShips[i]['shipDetails'] = ship;
                             };
                         }
-                        
-                        console.log(this.allShips);
                         return this.board;
 
                     }
@@ -137,7 +136,14 @@ class Gameboard {
         
     }
 
-
+    initializeBoard(){
+        for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+            this.board[i][j].value = 0;
+            }
+        };
+        return this.board;
+    }
 
 
 
