@@ -224,7 +224,7 @@ function screenController(arg) {
          resetButton.addEventListener('click',newDoc);
 
          function newDoc() {
-            window.location.assign("https://manelly67.github.io/TheOdinProject-Battleship/")
+            window.location.reload();
           }
 
     gameContainer.appendChild(turn);
