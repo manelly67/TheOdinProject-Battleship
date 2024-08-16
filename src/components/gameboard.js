@@ -112,8 +112,7 @@ class Gameboard {
      recordedMissedCoord( data, set=this.arrayMissed){
         set.add(data.toString());
         return set;
-     }
-
+     } 
 
     getTotalSunk(){
     
@@ -129,7 +128,7 @@ class Gameboard {
         let message = '';
 
         if(totalSunk===this.allShips.length){
-            return message = `All your ships have been sunk`;
+            return message = `All ships have been sunk`;
         }else{
             return  message = `Ships that have been sunk: ${totalSunk} - Ships afloat: ${this.allShips.length-totalSunk}`
         }

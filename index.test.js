@@ -3,6 +3,7 @@ import { Gameboard } from './src/components/gameboard';
 import { gameController} from './src/components/game-controller';
 import { playerReal, boardReal } from './player-human-mocking';
 import { playerComputer, boardComputer } from './player-computer-mocking';
+import { adjacent } from './src/components/adjacent';
 
 test('object class Ship - hit and sunk', () => {
     let oneShip = new Ship(3);
@@ -117,4 +118,7 @@ test('get the ship coordinates and details', () => {
     
   });
 
-  
+  test('function adjacent', () => {
+    let map = adjacent;
+    expect(map.get(2)).toEqual([1,3,14]);
+  });

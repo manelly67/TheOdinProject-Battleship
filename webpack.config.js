@@ -6,6 +6,7 @@ module.exports = {
     entry:  {
     index: './src/index.js',
     addShips: './src/components/add-ships.js',
+    adjacent: './src/components/adjacent.js',
     auxiliaryFunctions: './src/components/auxiliary-functions.js',
     createContainer: './src/components/create-container.js',
     deleteDivError: './src/components/delete-div-error.js',

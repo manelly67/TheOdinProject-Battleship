@@ -1,5 +1,5 @@
 import { gameController } from './game-controller';
-import { rows, columns, fromCoordinatestoCell } from './auxiliary-functions';
+import { rows, columns, fromCoordinatestoCell, allCoordinatesPosibles } from './auxiliary-functions';
 import { createContainers } from './create-container';
 import { addShips } from './add-ships';
 import { randomCoordinates } from './random-ships';
@@ -7,11 +7,14 @@ import { updateCells } from './update';
 import { updateCellsComputerBoard } from './update-computer-board';
 import { showError } from './show-error';
 import { deleteErrorMessages } from './delete-div-error';
+import { adjacent } from './adjacent';
 
 function screenController(arg) {
     /* arg is the game container */
 
     const game = gameController();
+    const totalCells = allCoordinatesPosibles();
+    let arrayAdjacent = [];   // ver si puede ser en otro lugar
 
         const gameContainer = arg;
         const turn = document.createElement('div');
@@ -161,8 +164,40 @@ function screenController(arg) {
         }
         humanBoard.addEventListener('click',noFireToFriend);
 
-        // Add a function for the computer attack
-        function computerAttack(){
+       // this function attack consider adjacents when got a hit
+       function computerAttack(){
+        let check = true;
+        let adj = 0;
+        let coord = [];
+        let arrayAllAttack = game.getHumanPlayer().gameboard['arrayAllAttack'];
+        while ( check === true){
+            if( arrayAdjacent.length!==0 ){
+                adj = arrayAdjacent.shift();
+                coord = totalCells.at(adj).split(',');
+                coord = [Number(coord[0]),coord[1]];
+            }else{
+                coord = randomCoordinates();
+                adj = totalCells.indexOf(coord.toString());
+            }
+            check = arrayAllAttack.has(coord.toString());
+        }
+        let cell = fromCoordinatestoCell(coord);
+        game.playRoundComputer(cell[0],cell[1]);
+        // if got a hit look for adjacents
+        let boardReal = game.boardReal();
+        if(boardReal[cell[0]][cell[1]].value===5){
+            arrayAdjacent = adjacent.get(adj);
+            if(arrayAdjacent===undefined){
+                arrayAdjacent=[];
+            }
+        }
+        getMessage(activeMessage);
+        updateScreen();  
+    }
+    
+        // Esta es la funcion de ataque de computadora unicamente aleatorio
+        /*
+         function computerAttack(){
             let check = true;
             let coord = [];
             let arrayAllAttack = game.getHumanPlayer().gameboard['arrayAllAttack'];
@@ -175,6 +210,9 @@ function screenController(arg) {
             getMessage(activeMessage);
             updateScreen();  
         }
+
+         */
+
 
         // add a result game
         const resultGameDiv = document.createElement("div");
