@@ -13,8 +13,8 @@ function screenController(arg) {
     /* arg is the game container */
 
     const game = gameController();
-    const totalCells = allCoordinatesPosibles();
-    let arrayAdjacent = [];   // ver si puede ser en otro lugar
+    const totalCells = allCoordinatesPosibles();   // for the computer's attack purpose
+    let arrayAdjacent = [];        // for the computer's attack purpose
 
         const gameContainer = arg;
         const turn = document.createElement('div');
@@ -164,7 +164,7 @@ function screenController(arg) {
         }
         humanBoard.addEventListener('click',noFireToFriend);
 
-       // this function attack consider adjacents when got a hit
+       // this attack's function consider adjacents when got a hit
        function computerAttack(){
         let check = true;
         let adj = 0;
@@ -186,7 +186,8 @@ function screenController(arg) {
         // if got a hit look for adjacents
         let boardReal = game.boardReal();
         if(boardReal[cell[0]][cell[1]].value===5){
-            arrayAdjacent = adjacent.get(adj);
+            let arrayTemp = adjacent.get(adj);
+            arrayTemp.map((x) => arrayAdjacent.push(x));
             if(arrayAdjacent===undefined){
                 arrayAdjacent=[];
             }

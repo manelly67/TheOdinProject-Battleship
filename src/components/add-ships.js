@@ -36,7 +36,7 @@ for(let i=1; i<=shipLength.length; ++i){
     const title = document.createElement('div');   
     title.setAttribute('style','text-transform: uppercase;');
     const text = document.createElement('p');
-    text.setAttribute('style','color:green; display:flex; justify-content: right;');
+    text.setAttribute('style','color:green; font-weight: 900; display:flex; justify-content: right;');
     text.innerText = `${shipLength[i-1]} squares longitude`;
    
 
@@ -150,6 +150,7 @@ for(let i=1; i<=shipLength.length; ++i){
 
     form.addEventListener('submit', function(event){
         event.preventDefault()
+        deleteErrorMessages();
         
         let size = shipLength[i-1];
 
@@ -218,6 +219,10 @@ for(let i=1; i<=shipLength.length; ++i){
     arg4.appendChild(divForRandom);
     arg4.appendChild(divForError);
     divForRandom.appendChild(buttonRandom);
+
+// AGREGAR AQUI LOS DOS DIV CON LAS COLUMNAS Y LAS FILAS Y REMOVERLOS AL AGREGAR LOS BARCOS
+
+
 
 }
 
