@@ -94,6 +94,18 @@ table {
 	  background-color: #b2b9c7;
 	}
 
+.headCell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 1rem;
+	border: 1px solid grey;
+	color: lightyellow;
+	background: black;
+	cursor: pointer;
+  }
+
 /* buttons */
 .hide {
 	display: none;
@@ -107,9 +119,12 @@ table {
     background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
     box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
 
+	transition: transform 250ms ease-in-out;
 }
 .addShipButton:hover {
-    background: #545e75; color: white; }
+    background: #545e75; color: white;
+	transform: scale(1.05);
+ }
 .addShipButton:active {
     background: #454d5f; color: white; }
 
@@ -119,9 +134,13 @@ table {
 	font-style: normal; font-variant: normal; text-transform: none; 
 	background-image: linear-gradient(to right, #b9fef6 0%, #09c3c1 100%) ; 
 	box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
+
+	transition: transform 250ms ease-in-out;
 }
 .resetButton:hover {
-	background: #545e75; color: white; }
+	background: #545e75; color: white; 
+	transform: scale(1.05);
+}
 .resetButton:active {
 	background: #454d5f; color: white; }
 	 

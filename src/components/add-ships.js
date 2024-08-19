@@ -174,7 +174,7 @@ for(let i=1; i<=shipLength.length; ++i){
             submitReady.remove();
 
             if(document.querySelectorAll('.formInput').length===0){
-                removeAllAddShipsDiv(grid,divForRandom);
+                removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
                 randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
             }
            
@@ -212,7 +212,7 @@ for(let i=1; i<=shipLength.length; ++i){
         updateCells(humanBoard,playerHuman['gameboard']['board']);
         randomShips(playerHuman['gameboard'],shipLength);
         updateCells(humanBoard,playerHuman['gameboard']['board']);
-        removeAllAddShipsDiv(grid,divForRandom);
+        removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
         randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
       });
     
@@ -220,16 +220,37 @@ for(let i=1; i<=shipLength.length; ++i){
     arg4.appendChild(divForError);
     divForRandom.appendChild(buttonRandom);
 
-// AGREGAR AQUI LOS DOS DIV CON LAS COLUMNAS Y LAS FILAS Y REMOVERLOS AL AGREGAR LOS BARCOS
+// headers for the rows and columns of the human player board
+      const divColumnsHead = document.createElement('div');
+      divColumnsHead.classList.add('columnsHead');
+        for (let j = 0; j < columns; j++) {
+        const cellHead = document.createElement("div");
+        cellHead.classList.add("headCell");
+        cellHead.textContent = alf_y[j];
+        divColumnsHead.appendChild(cellHead);
+        }
+      arg2.appendChild(divColumnsHead);
 
+      const divRowsHead = document.createElement('div');
+      divRowsHead.classList.add('rowsHead');
+        for (let i = 0; i < rows; i++) {
+        const cellHead = document.createElement("div");
+        cellHead.classList.add("headCell");
+        cellHead.setAttribute('style','height:7.25%;')
+        cellHead.textContent = i+1;
+        divRowsHead.appendChild(cellHead);
+        }
+      arg2.appendChild(divRowsHead);
 
 
 }
 
-function removeAllAddShipsDiv(arg1,arg2){
-    // arg1 and arg2 are the both div to will be removed
+function removeAllAddShipsDiv(arg1,arg2,arg3,arg4){
+    // all the arguments are the divs to will be removed
     arg1.remove();
     arg2.remove();
+    arg3.remove();
+    arg4.remove();
 }
 
 function randomShipsForComputerPlayer(arg1,arg2,arg3,arg4){

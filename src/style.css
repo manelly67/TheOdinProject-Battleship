@@ -113,6 +113,8 @@ div {
     }
 
   .board-human {
+      position: relative;   /* for headers purpose */
+
       grid-column: 2/3;   /* esta linea se asocia al grid del board */
       grid-row: 2/3;      /* esta linea se asocia al grid del board */
       display: grid;
@@ -138,5 +140,22 @@ div {
         gap: 2px;
         padding: 2px;
         background-color: #edeef1; 
+        
       }
+
+    .columnsHead {
+      position: absolute;    /* in relation parent board-human*/
+      transform: translateY(-100%); 
+      width: 100% ;
+      display:flex; 
+      justify-content: space-between;
+    }
+
+    .rowsHead{
+      position: absolute;    /* in relation parent board-human*/
+      transform: translateX(-100%); 
+      height: 100%;
+    }
+
+
     }
