@@ -3,7 +3,7 @@ function deleteErrorMessages() {
     /* para crear un array desde el NodeList */
     const errorMessagesArray = [...errorMessages];
     const iterator = errorMessagesArray.entries();
-    errorMessagesArray.forEach((element) => {
+    errorMessagesArray.forEach(() => {
       let index = iterator.next().value;
     /*   console.log(index[0]);
          console.log(index[1]); */

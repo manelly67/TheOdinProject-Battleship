@@ -1,4 +1,3 @@
-import _ from 'lodash'; 
 import './style-base.css';
 import './style.css';
 import { screenController } from './components/screen-controller.js';

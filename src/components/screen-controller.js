@@ -8,6 +8,7 @@ import { updateCellsComputerBoard } from './update-computer-board';
 import { showError } from './show-error';
 import { deleteErrorMessages } from './delete-div-error';
 import { adjacent } from './adjacent';
+import { updateScore} from './update-score';
 
 function screenController(arg) {
     /* arg is the game container */
@@ -28,15 +29,18 @@ function screenController(arg) {
     
         gameContainer.classList.add('container');
         turn.classList.add('turn');
+        turn.setAttribute('tabindex', 0);
         turnDiv.classList.add('turnDiv');
         waitTurn.setAttribute('style','grid-column:4/5;');
         boardDiv.classList.add('board');
         result.classList.add('result');
         humanBoard.classList.add('board-human');
+        humanBoard.setAttribute('tabindex', 0);
         computerBoard.classList.add('hide');
         resetButton.setAttribute('style','grid-row:3/4; grid-column:1/2');
         resetButton.classList.add('resetButton');
         resetButton.textContent = 'RESET for NEW GAME';
+        
 
     const initialScreen = () => {
         
@@ -56,6 +60,7 @@ function screenController(arg) {
             // Anything clickable should be a button!!
             const cellButton = document.createElement("button");
             cellButton.classList.add("cell");
+            cellButton.setAttribute('tabindex',-1);
             // Create a data attribute to identify the column
             cellButton.dataset.row = i;
             cellButton.dataset.column = j; 
@@ -88,6 +93,7 @@ function screenController(arg) {
         
         updateCells(humanBoard,boardReal,playerHuman);
         updateCellsComputerBoard(computerBoard,boardComputer,playerComputer);
+        updateScore(playerHuman,playerComputer);
 
         const activePlayer = game.getActivePlayer();
         // Display player's turn
@@ -137,18 +143,16 @@ function screenController(arg) {
         // Add event listener for the board computer for Human attacks
         function clickHandlerBoard(e) {
         switch(game.getActivePlayer().type==='HUMAN Player'){
-            case true:
+            case true:{
                 const selectedRow = e.target.dataset.row;
-                console.log('la fila es',selectedRow);
                 const selectedColumn = e.target.dataset.column;
-                console.log('la columna es',selectedColumn);
-                // when click the board computer the player is playerHuman
                 // Make sure I've clicked a column and not the gaps in between
                 if (!selectedRow) return;
                 game.playRound(Number(selectedRow),Number(selectedColumn));
                 getMessage(activeMessage);
                 updateScreen();
                 break;
+                }
             case false:
                 showError(waitTurn,'wait your turn'.toUpperCase());
                 setTimeout(deleteErrorMessages,800);
@@ -158,7 +162,7 @@ function screenController(arg) {
         computerBoard.addEventListener('click', clickHandlerBoard);
 
         // Add a message to avoid click in human board
-        function noFireToFriend(e){
+        function noFireToFriend(){
             showError(waitTurn,'BE CAREFUL. don\'t shoot your allies'.toUpperCase());
             setTimeout(deleteErrorMessages,1000);
         }

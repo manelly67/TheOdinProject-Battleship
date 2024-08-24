@@ -9,30 +9,34 @@ function updateCells(arg1,arg2,arg3){
     const cellsinBoard = [...arrayCells];
     const iterator = cellsinBoard.entries();
     
-    cellsinBoard.forEach((element) => {
+    cellsinBoard.forEach(() => {
       let index = iterator.next().value;
                                 /* (index[0]) (index[1]);  */
       let x = index[1];         /* para leer el node dentro del nodeList */
       
-        switch(boardContent[x.dataset.row][x.dataset.column].value===1){   // EL ERROR AL TERMINAR EL JUEGO LO DA EN ESTA LINEA array for each
+        switch(boardContent[x.dataset.row][x.dataset.column].value===1){   
             case true:
                 x.classList.add('cellShipAdded');
                 x.textContent = `SHIP`;
+                break;
             default:
                 switch(boardContent[x.dataset.row][x.dataset.column].value===0){
                     case true:
                       x.classList.add('cell');
                       x.textContent = '';
+                      break;
                     default:
                         switch(boardContent[x.dataset.row][x.dataset.column].value===2){
                             case true:
                             x.classList.add('cellMissed');
                             x.textContent = `water`;
+                            break;
                             default:
                                 switch(boardContent[x.dataset.row][x.dataset.column].value===5){
                                 case true:
                                 x.classList.add('cellHit');
-                                x.textContent = `HIT`;    
+                                x.textContent = `HIT`;
+                                break;    
                                 default:
                             }
                         }      
@@ -86,7 +90,7 @@ function reinitializeFormatCells(arg){
  const cellsinBoard = [...arrayCells];
  const iterator = cellsinBoard.entries();
  
- cellsinBoard.forEach((element) => {
+ cellsinBoard.forEach(() => {
    let index = iterator.next().value;
                              /* (index[0]) (index[1]);  */
    let x = index[1];         

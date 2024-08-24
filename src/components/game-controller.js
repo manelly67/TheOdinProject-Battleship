@@ -49,7 +49,7 @@ function gameController(
            default:
                        message = '';           
            }; 
-        console.log(message);         
+      /*  console.log(message);  */   
       };
 
       const getGameMessage = () => message;    
@@ -79,7 +79,6 @@ function gameController(
         }else{
             let coord = fromCelltoCoordinates(row,column);
             let gameboard = players[1]['gameboard'];
-            let board = players[1]['gameboard']['board'];   
             gameboard.recordedAttack(coord);
            
 
@@ -92,13 +91,12 @@ function gameController(
 
     const playRoundComputer = (row,column) => {
         let board = [];
-        console.log('activando juego');
+     /* console.log('activando juego'); */
         if ( winner === true ){ 
             resetGame();
         }else{
             let coord = fromCelltoCoordinates(row,column);
             let gameboard = players[0]['gameboard'];
-            let board = players[0]['gameboard']['board'];   
             gameboard.recordedAttack(coord);
            
 

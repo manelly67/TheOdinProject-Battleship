@@ -1,9 +1,10 @@
 import { rows, columns, alf_y} from './auxiliary-functions';
 import { updateCells} from './update';
-import { updateCellsComputerBoard } from "./update-computer-board";
+import { updateCellsComputerBoard } from './update-computer-board';
 import { showError } from './show-error';
 import { deleteErrorMessages } from './delete-div-error';
-import { randomShips } from "./random-ships";
+import { randomShips } from './random-ships';
+import { scoreBoard } from './score-board.js';
 
 function addShips(arg1,arg2,arg3,arg4,arg5,arg6){
     /* arg is the game  arg2 is the div with the humanboard  
@@ -15,11 +16,34 @@ const playerHuman = game.getActivePlayer();
 const computerBoard = arg5;
 const playerComputer = arg6;
 
+// headers for the rows and columns of the human player board
+const divColumnsHead = document.createElement('div');
+divColumnsHead.classList.add('columnsHead');
+  for (let j = 0; j < columns; j++) {
+  const cellHead = document.createElement("div");
+  cellHead.classList.add("headCell");
+  cellHead.textContent = alf_y[j].toUpperCase();
+  divColumnsHead.appendChild(cellHead);
+  }
+arg2.appendChild(divColumnsHead);
+
+const divRowsHead = document.createElement('div');
+divRowsHead.classList.add('rowsHead');
+  for (let i = 0; i < rows; i++) {
+  const cellHead = document.createElement("div");
+  cellHead.classList.add("headCell");
+  cellHead.setAttribute('style','height:7.25%;');
+  cellHead.textContent = i+1;
+  divRowsHead.appendChild(cellHead);
+  }
+arg2.appendChild(divRowsHead);
+
+// div for add the ships in the board
 const grid = document.getElementById('gridForAdd');
 grid.classList.add('gridForAdd');
 const divForError = document.createElement('div');
 divForError.setAttribute('id','divForError');
-divForError.setAttribute('style','grid-row: 1 / 2; grid-column: 4 / 5;')
+divForError.setAttribute('style','grid-row: 1 / 2; grid-column: 4 / 5;');
 
 const shipLength=[5,3,4,6,4,5];
         
@@ -36,7 +60,7 @@ for(let i=1; i<=shipLength.length; ++i){
     const title = document.createElement('div');   
     title.setAttribute('style','text-transform: uppercase;');
     const text = document.createElement('p');
-    text.setAttribute('style','color:green; font-weight: 900; display:flex; justify-content: right;');
+    text.setAttribute('style','color:green; background-color:white; font-weight: 900; display:flex; justify-content: right;');
     text.innerText = `${shipLength[i-1]} squares longitude`;
    
 
@@ -84,7 +108,7 @@ for(let i=1; i<=shipLength.length; ++i){
     for(let j=0; j<columns; ++j){
         const columnLabel = document.createElement('label');
         const inputColumn = document.createElement('input');
-        columnLabel.innerText = alf_y[j];
+        columnLabel.innerText = alf_y[j].toUpperCase();
         columnLabel.setAttribute('for',`column${alf_y[j]}`);
         inputColumn.setAttribute('type','radio');
         inputColumn.setAttribute('id',`column${alf_y[j]}`);
@@ -176,6 +200,7 @@ for(let i=1; i<=shipLength.length; ++i){
             if(document.querySelectorAll('.formInput').length===0){
                 removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
                 randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
+                scoreBoard(arg3,playerHuman,playerComputer);
             }
            
         }else{
@@ -214,34 +239,12 @@ for(let i=1; i<=shipLength.length; ++i){
         updateCells(humanBoard,playerHuman['gameboard']['board']);
         removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
         randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
+        scoreBoard(arg3,playerHuman,playerComputer);
       });
     
     arg4.appendChild(divForRandom);
     arg4.appendChild(divForError);
     divForRandom.appendChild(buttonRandom);
-
-// headers for the rows and columns of the human player board
-      const divColumnsHead = document.createElement('div');
-      divColumnsHead.classList.add('columnsHead');
-        for (let j = 0; j < columns; j++) {
-        const cellHead = document.createElement("div");
-        cellHead.classList.add("headCell");
-        cellHead.textContent = alf_y[j];
-        divColumnsHead.appendChild(cellHead);
-        }
-      arg2.appendChild(divColumnsHead);
-
-      const divRowsHead = document.createElement('div');
-      divRowsHead.classList.add('rowsHead');
-        for (let i = 0; i < rows; i++) {
-        const cellHead = document.createElement("div");
-        cellHead.classList.add("headCell");
-        cellHead.setAttribute('style','height:7.25%;')
-        cellHead.textContent = i+1;
-        divRowsHead.appendChild(cellHead);
-        }
-      arg2.appendChild(divRowsHead);
-
 
 }
 

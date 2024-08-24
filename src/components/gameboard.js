@@ -84,8 +84,7 @@ class Gameboard {
                 return this.board;
                 default:
                     switch(this.board[boardX][boardY].value === 1){
-                        case true:
-                        
+                        case true:{
                         callback1([x,y]);
                         this.board[boardX][boardY].value = 5;
                         let ship = new Ship(1);
@@ -98,7 +97,7 @@ class Gameboard {
                             };
                         }
                         return this.board;
-
+                        }
                     }
                 }
         }
@@ -124,15 +123,16 @@ class Gameboard {
 
 
     getSnapshot(){
-        let totalSunk = this.getTotalSunk();
         let message = '';
+        let totalSunk = this.getTotalSunk();
 
         if(totalSunk===this.allShips.length){
-            return message = `All ships have been sunk`;
+            message = `All ships have been sunk`;
+            return message;
         }else{
-            return  message = `Ships that have been sunk: ${totalSunk} - Ships afloat: ${this.allShips.length-totalSunk}`
-        }
-        
+            message = `Ships that have been sunk: ${totalSunk} - Ships afloat: ${this.allShips.length-totalSunk}`;
+            return message;
+        } 
     }
 
     initializeBoard(){

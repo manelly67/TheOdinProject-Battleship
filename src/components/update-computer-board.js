@@ -9,7 +9,7 @@ function updateCellsComputerBoard(arg1,arg2,arg3){
     const cellsinBoard = [...arrayCells];
     const iterator = cellsinBoard.entries();
     
-    cellsinBoard.forEach((element) => {
+    cellsinBoard.forEach(() => {
       let index = iterator.next().value;
                                 /* (index[0]) (index[1]) para leer el node dentro del nodeList */
       let x = index[1];         
@@ -18,21 +18,25 @@ function updateCellsComputerBoard(arg1,arg2,arg3){
             case true:
                 x.classList.add('cell');
                 x.textContent = ''; 
+                break;
             default:
                 switch(boardContent[x.dataset.row][x.dataset.column].value===0){
                     case true:
                       x.classList.add('cell');
-                      x.textContent = ''; 
+                      x.textContent = '';
+                      break;
                     default:
                         switch(boardContent[x.dataset.row][x.dataset.column].value===2){
                             case true:
                             x.classList.add('cellMissed');
                             x.textContent = `water`;
+                            break;
                             default:
                                 switch(boardContent[x.dataset.row][x.dataset.column].value===5){
                                 case true:
                                 x.classList.add('cellHit');
-                                x.textContent = `HIT`; 
+                                x.textContent = `HIT`;
+                                break;
                                 default:
                             }
                         }         
@@ -59,7 +63,6 @@ arrayShips.forEach((element) => {
             break;
     }
 });
-console.log(coordShipsSunk);
 
 let arrayIndexNodeAndCoord = relationCoordVsNodeList();
 let indexesSunks = [];
@@ -86,7 +89,7 @@ let arrayCells = boardDiv.querySelectorAll("button");
 const cellsinBoard = [...arrayCells];
 const iterator = cellsinBoard.entries();
 
-cellsinBoard.forEach((element) => {
+cellsinBoard.forEach(() => {
   let index = iterator.next().value;
                             /* (index[0]) (index[1]);  */
   let x = index[1];         

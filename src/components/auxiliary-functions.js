@@ -6,13 +6,12 @@ const alf_y = [
      ];
 
 function shiftCoordinates([value_x,value_y]){
-    
-    let [x,y] = [1,'a'];
-
+       /*  let [x,y] = [1,'a'];  */
         switch(alf_y.includes(value_y.toLowerCase())){
-                case true:
+                case true:{
                     let index = alf_y.indexOf(value_y.toLowerCase());
-                    return [x,y] = [ value_x-1, index];
+                    return [ value_x-1, index ];
+                }
                 default:
                     return null;
         }  
@@ -60,16 +59,15 @@ function checkCoordinates([x,y]){
 }
 
 function fromCelltoCoordinates(row,column){
-    let [x,y] = [1,'a'];
-        
-        return [x,y] = [ row + 1, alf_y[column] ];
+  /*   let [x,y] = [1,'a'];     */
+    return [ row + 1, alf_y[column] ];
 }
 
 function fromCoordinatestoCell(coord){
-    let [row,column] = [0,0];
+   /*  let [row,column] = [0,0]; */
     let rowSelected = coord[0]-1;
-    let columnSelected = alf_y.indexOf(coord[1].toLowerCase())
-        return [row,column] = [Number(rowSelected), Number(columnSelected)];
+    let columnSelected = alf_y.indexOf(coord[1].toLowerCase());
+        return [Number(rowSelected), Number(columnSelected)];
 }
 
 function allCoordinatesPosibles() {
