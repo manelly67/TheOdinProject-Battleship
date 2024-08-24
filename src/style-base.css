@@ -60,6 +60,7 @@ table {
 	border: 1px solid grey;
 	background: lightyellow;
 	cursor: pointer;
+	max-width: 100%;
   }
 
   .cellShipAdded {
@@ -99,10 +100,11 @@ table {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	width: 100%;
 	font-size: 1rem;
 	border: 1px solid grey;
 	color: lightyellow;
-	background: black;
+	background: #353a45;
 	cursor: pointer;
   }
 
@@ -134,15 +136,40 @@ table {
 	font-style: normal; font-variant: normal; text-transform: none; 
 	background-image: linear-gradient(to right, #b9fef6 0%, #09c3c1 100%) ; 
 	box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
-
+	transform: translateY(-10%);
 	transition: transform 250ms ease-in-out;
 }
 .resetButton:hover {
 	background: #545e75; color: white; 
 	transform: scale(1.05);
+	transform: translateY(-10%);
 }
 .resetButton:active {
 	background: #454d5f; color: white; }
+
+/* score elements */
+
+.scoreTitle{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: #3c4350;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+.shipFloat{
+	background-image: url('./img/ship.jpg');
+	background-size: cover;
+  	background-position: center;
+}
+
+.shipSunk{
+	background-image: url('./img/ship-sunk.jpg');
+	background-size: cover;
+  	background-position: center;
+	border-bottom: 2px solid #09c3c1;
+}
 	 
 /* This is the style of our error messages */
 	  .error {
