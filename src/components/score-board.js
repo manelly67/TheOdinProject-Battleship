@@ -18,11 +18,11 @@ computerScore.classList.add('score');
 
 const humanTitle = document.createElement('p');
 humanTitle.textContent = 'COMPUTER attacks';  /* in the human board */
-humanTitle.setAttribute('style','grid-row:1/2;grid-column:1/3;');
+humanTitle.setAttribute('style','grid-row:1/2;grid-column:1/3;background-color:lightyellow;');
 humanTitle.classList.add('scoreTitle');
 
 const success = document.createElement('p');
-success.setAttribute('style','grid-row:2/3;grid-column:1/3;');
+success.setAttribute('style','grid-row:2/3;grid-column:1/3;color:#09c3c1;background-color:lightyellow;font-weight:bold;');
 let rate = 0; /* inicia en 0 */
 success.textContent = `success rate: ${rate}%`; 
 
@@ -78,11 +78,11 @@ hitsH6.innerText = `HITS: ${playerHuman['gameboard']['allShips'][5]['shipDetails
 
 const computerTitle = document.createElement('p');
 computerTitle.textContent = 'HUMAN attacks';  /* in the board computer */
-computerTitle.setAttribute('style','grid-row:1/2;grid-column:1/3;');
+computerTitle.setAttribute('style','grid-row:1/2;grid-column:1/3;background-color:lightyellow;');
 computerTitle.classList.add('scoreTitle');
 
 const successComp = document.createElement('p');
-successComp.setAttribute('style','grid-row:2/3;grid-column:1/3;');
+successComp.setAttribute('style','grid-row:2/3;grid-column:1/3;color:#09c3c1;background-color:lightyellow;font-weight:bold;');
 let rateComp = 0; /* inicia en 0 */
 successComp.textContent = `success rate: ${rateComp}%`; 
 

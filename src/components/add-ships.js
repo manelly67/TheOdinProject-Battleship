@@ -199,7 +199,7 @@ for(let i=1; i<=shipLength.length; ++i){
 
             if(document.querySelectorAll('.formInput').length===0){
                 removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
-                randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
+                randomShipsForComputerPlayer(computerBoard,shipLength,playerComputer);
                 scoreBoard(arg3,playerHuman,playerComputer);
             }
            
@@ -238,7 +238,7 @@ for(let i=1; i<=shipLength.length; ++i){
         randomShips(playerHuman['gameboard'],shipLength);
         updateCells(humanBoard,playerHuman['gameboard']['board']);
         removeAllAddShipsDiv(grid,divForRandom,divColumnsHead,divRowsHead);
-        randomShipsForComputerPlayer(arg3,computerBoard,shipLength,playerComputer);
+        randomShipsForComputerPlayer(computerBoard,shipLength,playerComputer);
         scoreBoard(arg3,playerHuman,playerComputer);
       });
     
@@ -256,18 +256,18 @@ function removeAllAddShipsDiv(arg1,arg2,arg3,arg4){
     arg4.remove();
 }
 
-function randomShipsForComputerPlayer(arg1,arg2,arg3,arg4){
+function randomShipsForComputerPlayer(arg1,arg2,arg3){
       /*  arg1 is the div to write the head */
-        const computerBoard = arg2;
-        const shipLength = arg3;
-        const playerComputer = arg4;
+        const computerBoard = arg1;
+        const shipLength = arg2;
+        const playerComputer = arg3;
 
         computerBoard.classList.remove('hide');
         computerBoard.classList.add('board-computer');
 
         const headComputer = document.createElement('div');
         headComputer.innerText = 'this is your enemy '.toUpperCase()+' Click To Attack';
-        headComputer.setAttribute('style','grid-row: 1/2; grid-column: 4/5; padding-left:25%; color:lightyellow;');
+        headComputer.classList.add('headComputer');
         arg1.appendChild(headComputer);
 
         playerComputer['gameboard'].initializeBoard();

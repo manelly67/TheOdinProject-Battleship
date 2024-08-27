@@ -1,56 +1,4 @@
-
- /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* end of reset of style browser */
-
-/* cells  */
+/* cells - buttons - images*/
 .cell {
 	display: flex;
 	justify-content: center;
@@ -66,25 +14,25 @@ table {
   .cellShipAdded {
 	  background-color: #5be734; 
 	  color: #207d0e;
-	  font-size: 8px
+	  font-size: 8px;
   }
 
   .cellMissed {
 	  background-color: #effefb; 
 	  color: #087b7d;
-	  font-size: 8px
+	  font-size: 8px;
   }
 
   .cellHit {
 	  background-color: #fea173; 
 	  color: #9b1b11;
-	  font-size: 9px
+	  font-size: 9px;
   }
 
   .cellSunk {
 	  background-color: black; 
 	  color: white;
-	  font-size: 9px
+	  font-size: 9px;
   }
 
  [class^='cell']:hover{
@@ -101,6 +49,7 @@ table {
 	align-items: center;
 	text-align: center;
 	width: 100%;
+	height: 100%;
 	font-size: 1rem;
 	border: 1px solid grey;
 	color: lightyellow;
@@ -115,7 +64,8 @@ table {
   }
 
 .addShipButton {       
-    color: black; line-height: 2rem; padding: 15px; 
+    color: black; line-height: 2rem; padding-left: 10px; padding-top: 15px; padding-right: 10px; 
+	padding-bottom: 15px;
     border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none;
     font-style: normal; font-variant: normal; text-transform: none; 
     background-image: linear-gradient(to right, rgb(105,117,142) 0%, rgb(214,217,225) 100%) ; 
@@ -136,13 +86,13 @@ table {
 	font-style: normal; font-variant: normal; text-transform: none; 
 	background-image: linear-gradient(to right, #b9fef6 0%, #09c3c1 100%) ; 
 	box-shadow: #edeef1 2px 2px 4px 2px; border: 2px solid #353945; display: inline-block;
-	transform: translateY(-10%);
+	transform: translateY(-100%);
 	transition: transform 250ms ease-in-out;
 }
 .resetButton:hover {
 	background: #545e75; color: white; 
 	transform: scale(1.05);
-	transform: translateY(-10%);
+	transform: translateY(-100%);
 }
 .resetButton:active {
 	background: #454d5f; color: white; }

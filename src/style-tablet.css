@@ -1,0 +1,121 @@
+@media screen and (min-width:621px) and (max-width:980px){
+
+    main {
+      width: 100%;
+      height: 100%;
+    }
+    
+  .turn {
+    width: 100%;
+    padding-top: 45px;
+  }
+  
+  .randomships {   
+    font-size: 0.7rem;
+   }
+  
+   .board{
+    grid-column: 2/3;   /* esta linea se asocia al grid del container */
+    grid-row: 2/3;      /* esta linea se asocia al grid del container */
+    background-color: #454d5f;
+    height:90%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
+    grid-template-rows: 1fr 14fr;
+    column-gap: 2%;
+    padding-bottom: 5%;
+    padding-right: 10%;
+    }
+  
+  .board-human{
+    max-width: 220px;
+    max-height: 325px;
+  }
+  
+  .board-computer{
+    max-width: 220px;
+    max-height: 325px;
+  }
+  
+  .scoreBoard{
+    width: 85px;
+    height: 620px;
+  }
+  
+  .resetButton {
+   position: absolute;
+   top: 25px;
+   left: 15px;
+   height: 25px;
+   padding: 1px 15px 1px 15px;
+  }
+  
+  .addships {
+    padding: 1px 15px 1px 15px;
+  }
+  
+}
+
+@media screen and (min-width:621px) and (max-width:980px){
+    .cell{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.7rem;
+        border: 1px solid grey;
+        background: lightyellow;
+        cursor: pointer;
+        max-width: 17px;
+        max-height: 23px;
+      }
+ 
+     .cellShipAdded {
+         background-color: #5be734; 
+         color: #207d0e;
+         font-size: 4px;
+         width: 17px;
+         height: 23px;
+     }
+     .cellMissed {
+         background-color: #effefb; 
+         color: #087b7d;
+         font-size: 4px;
+         width: 17px;
+         height: 23px;
+     }
+   
+     .cellHit {
+         background-color: #fea173; 
+         color: #9b1b11;
+         font-size: 5px;
+         width: 17px;
+         height: 23px;
+     }
+   
+     .cellSunk {
+         background-color: black; 
+         color: white;
+         font-size: 5px;
+         width: 17px;
+         height: 23px;
+     }
+
+     picture {
+         width: 50px;
+     }
+ 
+ /*     .shipFloat{
+         background-image: url('./img/ship.jpg');
+         background-size: cover;
+           background-position: center;
+     }
+     
+     .shipSunk{
+         background-image: url('./img/ship-sunk.jpg');
+         background-size: cover;
+         background-position: center;
+         border-bottom: 2px solid #09c3c1;
+     } */
+}

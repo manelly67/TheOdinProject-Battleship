@@ -1,5 +1,9 @@
+import './style-reset.css';
 import './style-base.css';
 import './style.css';
+import './style-tablet.css';
+import './style-mobile.css';
+
 import { screenController } from './components/screen-controller.js';
 
 function component() { 

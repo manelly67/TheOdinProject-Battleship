@@ -31,7 +31,7 @@ function screenController(arg) {
         turn.classList.add('turn');
         turn.setAttribute('tabindex', 0);
         turnDiv.classList.add('turnDiv');
-        waitTurn.setAttribute('style','grid-column:4/5;');
+        waitTurn.classList.add('waitTurn');
         boardDiv.classList.add('board');
         result.classList.add('result');
         humanBoard.classList.add('board-human');
@@ -200,26 +200,7 @@ function screenController(arg) {
         updateScreen();  
     }
     
-        // Esta es la funcion de ataque de computadora unicamente aleatorio
-        /*
-         function computerAttack(){
-            let check = true;
-            let coord = [];
-            let arrayAllAttack = game.getHumanPlayer().gameboard['arrayAllAttack'];
-            while ( check === true){
-                coord = randomCoordinates();
-                check = arrayAllAttack.has(coord.toString());
-            }
-            let cell = fromCoordinatestoCell(coord);
-            game.playRoundComputer(cell[0],cell[1]);
-            getMessage(activeMessage);
-            updateScreen();  
-        }
-
-         */
-
-
-        // add a result game
+            // add a result game
         const resultGameDiv = document.createElement("div");
         resultGameDiv.classList.add('resultMessage');
         const activeMessage = game.getGameMessage();
@@ -233,7 +214,7 @@ function screenController(arg) {
         function addDiv(arg){
             const attackMessage = document.createElement('div');
             attackMessage.setAttribute('id','attackMessage');
-            attackMessage.setAttribute('style','grid-row: 1/2; grid-column: 2/3; display:flex; flex-wrap:nowrap;');
+            attackMessage.classList.add('attackMessage');
             let text = document.createElement('p');
             text.setAttribute('id','text');
             text.setAttribute('style','color:lightyellow;');
