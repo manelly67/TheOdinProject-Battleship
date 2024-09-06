@@ -39,8 +39,8 @@
   }
   
   .scoreBoard{
-    width: 85px;
-    height: 620px;
+    max-width: 85px;
+    max-height: 800px;
   }
   
   .resetButton {
@@ -54,11 +54,7 @@
   .addships {
     padding: 1px 15px 1px 15px;
   }
-  
-}
 
-@media screen and (min-width:621px) and (max-width:840px){
-  
   [class^='cell']{
 	  font-size: 4px;
     padding: 1px;
@@ -68,4 +64,5 @@
        width: 50px;
      }
  
+  
 }

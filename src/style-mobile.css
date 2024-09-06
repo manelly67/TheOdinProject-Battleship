@@ -9,13 +9,13 @@
     padding-top: 45px;
     position: relative;
   }
- /* 
+ 
   .result { 
     position: absolute;
-    transform: translate(50%,-50%);
+    transform: translate(4%,-23%);
     width: 100%;
     height: 100%;
-  } */
+  } 
 
   .randomships {   
     font-size: 0.7rem;
@@ -46,8 +46,9 @@
   }
   
   .scoreBoard{
-    width: 85px;
-    height: auto;
+    margin-top: 70px;
+    max-width: 83px;
+    max-height: 800px;
   }
   
   .resetButton {
@@ -72,32 +73,29 @@
     transform: translateY(-100%);
     width: 75% ;
     }
+
+    [class^='cell']{
+      font-size: 4px;
+      padding: 1px;
+    }
+  
+    .addShipButton {     
+      font-size: 0.6rem;
+      line-height: 1rem;
+      width: 70px; height: 85px;
+      text-wrap: wrap;
+      padding-left: 5px; padding-top: 5px; padding-right: 5px; 
+      padding-bottom: 5px;
+    }
+  
+    picture {
+      width: 50px;
+    }
+  
+    .error.active {
+      height: 90%;
+      font-size: 0.7rem;
+      }
   
 }
-  
-@media screen and (max-width: 620px){
-
-  [class^='cell']{
-	  font-size: 4px;
-    padding: 1px;
-	}
-
-	.addShipButton {     
-		font-size: 0.6rem;
-    line-height: 1rem;
-		width: 70px; height: 85px;
-		text-wrap: wrap;
-    padding-left: 5px; padding-top: 5px; padding-right: 5px; 
-	  padding-bottom: 5px;
-	}
-
-	picture {
-		width: 50px;
-	}
-
-	.error.active {
-		height: 90%;
-    font-size: 0.7rem;
-	  }
-
-   }
+ 
