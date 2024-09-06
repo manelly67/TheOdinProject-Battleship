@@ -167,7 +167,7 @@ main {
       grid-row: 1 / 2;      /* esta linea se asocia al grid del container */
       grid-column: 2 / 4;   /* esta linea se asocia al grid del container */
       display: grid;
-      grid-template-columns: 2fr 1fr 4fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 2fr 3fr 1fr;
       grid-template-rows: 1fr;
   }
 
@@ -198,14 +198,16 @@ main {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     padding-top: 1%;
+	align-items: center;
     color: lightyellow;
     display: flex;
     justify-content:flex-start;
+	gap: 3px;
   }
 
   .result {                     /* grid turn*/
   grid-row: 1/2;
-  grid-column: 3/4;
+  grid-column: 4/5;
 }
 
 .resultMessage {  

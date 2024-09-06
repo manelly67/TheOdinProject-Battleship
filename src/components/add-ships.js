@@ -225,7 +225,7 @@ for(let i=1; i<=shipLength.length; ++i){
     }
 
     const divForRandom = document.createElement('div');
-    divForRandom.innerText = 'Click here for a random fleet of ships';
+    divForRandom.innerText = '➥ ';
     divForRandom.classList.add('randomships');
     const buttonRandom = document.createElement('button');
     buttonRandom.innerText = 'RANDOM FLEET';
