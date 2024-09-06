@@ -47,8 +47,8 @@
   
   .scoreBoard{
     margin-top: 70px;
-    max-width: 83px;
-    max-height: 800px;
+    width: 83px;
+    height: 800px;
   }
   
   .resetButton {
