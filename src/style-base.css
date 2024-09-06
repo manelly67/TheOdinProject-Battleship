@@ -6,50 +6,66 @@
 	text-align: center;
 	font-size: 0.7rem;
 	border: 1px solid grey;
-	background: lightyellow;
+	background-color: lightyellow;
 	cursor: pointer;
 	max-width: 100%;
   }
 
   .cellShipAdded {
 	  background-color: #5be734; 
+	  border-color: #84f363;
 	  color: #207d0e;
 	  font-size: 8px;
   }
 
   .cellMissed {
-	  background-color: #effefb; 
-	  color: #087b7d;
+	  background-color: #c8fff5;
+	  border-color:#effefb;
+	  color: #0b6461;
 	  font-size: 8px;
   }
 
   .cellHit {
 	  background-color: #fea173; 
+	  border-color:#ffc8a9;
 	  color: #9b1b11;
 	  font-size: 9px;
   }
 
   .cellSunk {
-	  background-color: black; 
+	  background-color: black;
+	  border-color: #3d3d3d; 
 	  color: white;
 	  font-size: 9px;
   }
 
  [class^='cell']:hover{
-  background-color: #545e75;
+	  animation: opacity 1.5s both;
 	}
 
  [class^='cell']:active{
-	  background-color: #b2b9c7;
+	  background-color: #545e75;
 	}
+
+	@keyframes opacity {
+		0% {
+		  opacity: 1;
+		}
+		50% {
+		  opacity: 0;
+		}
+		100% {
+		  opacity: 1;
+		}
+	  }
 
 .headCell {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	text-align: center;
 	width: 100%;
 	height: 100%;
+	align-items: center;
+	text-align: center;
 	font-size: 1rem;
 	border: 1px solid grey;
 	color: lightyellow;
@@ -124,6 +140,7 @@
 /* This is the style of our error messages */
 	  .error {
 		width: 100%;
+		height: 100%;
 		padding: 0;
 		font-size: 1rem;
 		color: white;

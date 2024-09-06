@@ -1,9 +1,9 @@
 import {allCoordinatesPosibles} from './auxiliary-functions' ;
 
-function randomShips(arg1){
+function randomShips(arg1,arg2){
     /* arg1 is the playerGameboard arg2 is the array with length*/
    
-   const shipLength=[5,3,4,6,4,5];
+   const shipLength=arg2;
    const arrayDirection = ['left-to-right','top-to-down'];
    const totalCells = allCoordinatesPosibles();
    

@@ -1,4 +1,4 @@
-@media screen and (min-width:621px) and (max-width:980px){
+@media screen and (min-width:621px) and (max-width:840px){
 
     main {
       width: 100%;
@@ -57,65 +57,15 @@
   
 }
 
-@media screen and (min-width:621px) and (max-width:980px){
-    .cell{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 0.7rem;
-        border: 1px solid grey;
-        background: lightyellow;
-        cursor: pointer;
-        max-width: 17px;
-        max-height: 23px;
-      }
- 
-     .cellShipAdded {
-         background-color: #5be734; 
-         color: #207d0e;
-         font-size: 4px;
-         width: 17px;
-         height: 23px;
-     }
-     .cellMissed {
-         background-color: #effefb; 
-         color: #087b7d;
-         font-size: 4px;
-         width: 17px;
-         height: 23px;
-     }
-   
-     .cellHit {
-         background-color: #fea173; 
-         color: #9b1b11;
-         font-size: 5px;
-         width: 17px;
-         height: 23px;
-     }
-   
-     .cellSunk {
-         background-color: black; 
-         color: white;
-         font-size: 5px;
-         width: 17px;
-         height: 23px;
-     }
-
-     picture {
-         width: 50px;
+@media screen and (min-width:621px) and (max-width:840px){
+  
+  [class^='cell']{
+	  font-size: 4px;
+    padding: 1px;
+	}
+  
+  picture {
+       width: 50px;
      }
  
- /*     .shipFloat{
-         background-image: url('./img/ship.jpg');
-         background-size: cover;
-           background-position: center;
-     }
-     
-     .shipSunk{
-         background-image: url('./img/ship-sunk.jpg');
-         background-size: cover;
-         background-position: center;
-         border-bottom: 2px solid #09c3c1;
-     } */
 }

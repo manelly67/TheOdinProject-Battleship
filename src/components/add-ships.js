@@ -32,7 +32,6 @@ divRowsHead.classList.add('rowsHead');
   for (let i = 0; i < rows; i++) {
   const cellHead = document.createElement("div");
   cellHead.classList.add("headCell");
-  cellHead.setAttribute('style','height:7.25%;');
   cellHead.textContent = i+1;
   divRowsHead.appendChild(cellHead);
   }
@@ -233,6 +232,8 @@ for(let i=1; i<=shipLength.length; ++i){
     buttonRandom.classList.add('addShipButton');
 
     buttonRandom.addEventListener("click", () => {
+        deleteErrorMessages();
+        playerHuman['gameboard']['allShips']=[];
         playerHuman['gameboard'].initializeBoard();
         updateCells(humanBoard,playerHuman['gameboard']['board']);
         randomShips(playerHuman['gameboard'],shipLength);

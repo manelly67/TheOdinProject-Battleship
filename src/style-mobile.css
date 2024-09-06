@@ -9,20 +9,13 @@
     padding-top: 45px;
     position: relative;
   }
-  
-  .waitTurn {
-    position: absolute;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 100%;
-  }
-
+ /* 
   .result { 
     position: absolute;
-    transform: translateY(-50%);
+    transform: translate(50%,-50%);
     width: 100%;
     height: 100%;
-  }
+  } */
 
   .randomships {   
     font-size: 0.7rem;
@@ -83,54 +76,19 @@
 }
   
 @media screen and (max-width: 620px){
-	.cell{
-	   display: flex;
-	   justify-content: center;
-	   align-items: center;
-	   text-align: center;
-	   font-size: 0.7rem;
-	   border: 1px solid grey;
-	   background: lightyellow;
-	   cursor: pointer;
-	   max-width: 17px;
-	   max-height: 19.2px;
-	 }
 
-	.cellShipAdded {
-		background-color: #5be734; 
-		color: #207d0e;
-		font-size: 4px;
-		width: 17px;
-	    height: 19.2px;
-	}
-	.cellMissed {
-		background-color: #effefb; 
-		color: #087b7d;
-		font-size: 4px;
-		width: 17px;
-	    height: 19.2px;
-	}
-  
-	.cellHit {
-		background-color: #fea173; 
-		color: #9b1b11;
-		font-size: 5px;
-		width: 17px;
-	    height: 19.2px;
-	}
-  
-	.cellSunk {
-		background-color: black; 
-		color: white;
-		font-size: 5px;
-		width: 17px;
-	    height: 19.2px;
+  [class^='cell']{
+	  font-size: 4px;
+    padding: 1px;
 	}
 
 	.addShipButton {     
-		font-size: 0.4rem;
+		font-size: 0.6rem;
+    line-height: 1rem;
 		width: 70px; height: 85px;
-		text-wrap: nowrap;
+		text-wrap: wrap;
+    padding-left: 5px; padding-top: 5px; padding-right: 5px; 
+	  padding-bottom: 5px;
 	}
 
 	picture {
@@ -138,6 +96,8 @@
 	}
 
 	.error.active {
-		height: 60px;
+		height: 90%;
+    font-size: 0.7rem;
 	  }
+
    }

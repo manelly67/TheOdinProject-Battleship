@@ -1,10 +1,50 @@
 /* grids and locations */
-@media screen and (min-width: 981px) {  
+@media screen and (min-width:841px) and (max-width:1100px) {  
+  main {
+    width: 100%;
+    height: 100%;
+  }
   .board{
     grid-column: 2/3;   /* esta linea se asocia al grid del container */
     grid-row: 2/3;      /* esta linea se asocia al grid del container */
     background-color: #454d5f;
     height:90%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
+    grid-template-rows: 1fr 14fr;
+    column-gap: 2%;
+    padding-bottom: 5%;
+    padding-right: 10%;
+    }
+  
+  .board-human{
+    max-width: 264px;
+    max-height: 390px;
+  }
+  
+  .board-computer{
+    max-width: 264px;
+    max-height: 390px;
+  }
+  [class^='cell']{
+	  font-size: 6px;
+    padding: 1px;
+	}
+  
+}
+
+@media screen and (min-width: 1101px) {  
+  main {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .board{
+    grid-column: 2/3;   /* esta linea se asocia al grid del container */
+    grid-row: 2/3;      /* esta linea se asocia al grid del container */
+    background-color: #454d5f;
+    height: 90%;
     width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
@@ -38,8 +78,14 @@
     color: lightyellow;
   }
 
+  .turn {
+    position: relative;
+  }
+
   .waitTurn {
-    grid-column:4/5;     /* grid turn*/
+    position: absolute;
+    transform: translate(40%,20%); 
+    width: 100% ;
   }
 
   .addships {
@@ -58,10 +104,10 @@
   }
 
   .result {                     /* grid turn*/
-  grid-row: 1 / 2;      
-  grid-column: 4/ 6; 
-  display: grid;
-  grid-template-columns: 1fr;
+  position: absolute;
+  transform: translate(50%,-50%);
+  width: 100%;
+  height: 100%;
 }
 
 .resultMessage {  
@@ -132,7 +178,7 @@
         border: 5px solid black;
         gap: 2px;
         padding: 2px;
-        background-color: #edeef1; 
+        background-color: #b2b9c7; 
         
       }
 
@@ -148,6 +194,9 @@
       position: absolute;    /* in relation parent board-human*/
       transform: translateX(-100%); 
       height: 100%;
+      display:flex; 
+      flex-direction: column;
+      justify-content: space-evenly;
     }
 
     .headComputer {
@@ -164,6 +213,7 @@
       grid-column: 2/3; 
       display:flex; 
       flex-wrap:nowrap;
+      align-items: center;
     }
     
 

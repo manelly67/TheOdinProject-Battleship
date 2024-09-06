@@ -16,24 +16,28 @@ function updateCells(arg1,arg2,arg3){
       
         switch(boardContent[x.dataset.row][x.dataset.column].value===1){   
             case true:
+                x.className='';
                 x.classList.add('cellShipAdded');
                 x.textContent = `SHIP`;
                 break;
             default:
                 switch(boardContent[x.dataset.row][x.dataset.column].value===0){
                     case true:
+                      x.className='';
                       x.classList.add('cell');
                       x.textContent = '';
                       break;
                     default:
                         switch(boardContent[x.dataset.row][x.dataset.column].value===2){
                             case true:
+                            x.className='';
                             x.classList.add('cellMissed');
                             x.textContent = `water`;
                             break;
                             default:
                                 switch(boardContent[x.dataset.row][x.dataset.column].value===5){
                                 case true:
+                                x.className='';
                                 x.classList.add('cellHit');
                                 x.textContent = `HIT`;
                                 break;    
