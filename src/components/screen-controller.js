@@ -109,6 +109,14 @@ function screenController(arg) {
       default:
         // game over - disable event listener
         computerBoard.removeEventListener("click", clickHandlerBoard);
+        waitTurn.textContent = "GAME OVER".toUpperCase();
+        waitTurn.classList.add("gameOver");
+        waitTurn.classList.add("waitTurn");
+        setTimeout(() => {
+          waitTurn.textContent = "";
+          waitTurn.classList.remove("gameOver");
+          waitTurn.classList.remove("waitTurn");
+        }, 1200);
         break;
     }
   };

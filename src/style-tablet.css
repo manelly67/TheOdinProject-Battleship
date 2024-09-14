@@ -79,4 +79,22 @@
     top: 30%;
     left: 10%;
   }
+
+  .result {
+    position: fixed;
+    top: 5%;
+    right: 50%;
+  }
+
+  .attackMessage {
+    position: fixed;
+    top: 200px;
+    left: 2%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #353a45;
+    height: 30px;
+    width: 220px;
+  }
 }
