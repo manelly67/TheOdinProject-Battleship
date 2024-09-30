@@ -1,6 +1,6 @@
 /* cells - buttons - images*/
 body {
-  min-width: 320px;
+  min-width: 360px;
   min-height: 100vh;
 }
 
@@ -269,7 +269,7 @@ main {
 }
 
 .resultMessage {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: lightyellow;
 }

@@ -22,18 +22,18 @@
     display: grid;
     grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
     grid-template-rows: 1fr 14fr;
-    column-gap: 2%;
+    column-gap: 1%;
     padding-bottom: 5%;
     padding-right: 10%;
   }
 
   .board-human {
-    max-width: 220px;
+    max-width: 250px;
     max-height: 325px;
   }
 
   .board-computer {
-    max-width: 220px;
+    max-width: 250px;
     max-height: 325px;
   }
 
@@ -83,7 +83,9 @@
   .result {
     position: fixed;
     top: 5%;
-    right: 50%;
+    left: 28%;
+    z-index: 1;
+    background-color: #353a45;
   }
 
   .attackMessage {

@@ -12,18 +12,18 @@
     display: grid;
     grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
     grid-template-rows: 1fr 14fr;
-    column-gap: 2%;
+    column-gap: 1%;
     padding-bottom: 5%;
     padding-right: 10%;
   }
 
   .board-human {
-    max-width: 264px;
+    max-width: 290px;
     max-height: 390px;
   }
 
   .board-computer {
-    max-width: 264px;
+    max-width: 290px;
     max-height: 390px;
   }
 
@@ -60,7 +60,7 @@
     display: grid;
     grid-template-columns: 0.5fr 14fr 0.1fr 14fr;
     grid-template-rows: 1fr 14fr;
-    column-gap: 5%;
+    column-gap: 3%;
     padding-bottom: 5%;
     padding-right: 10%;
   }

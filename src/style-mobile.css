@@ -11,8 +11,10 @@
 
   .result {
     position: fixed;
-    top: 5%;
-    right: 50%;
+    top: 3.5%;
+    left: 35%;
+    z-index: 1;
+    background-color: #353a45;
   }
 
   .waitTurn {
@@ -46,12 +48,12 @@
   }
 
   .board-human {
-    max-width: 220px;
+    max-width: 230px;
     max-height: 249px;
   }
 
   .board-computer {
-    max-width: 220px;
+    max-width: 230px;
     max-height: 249px;
   }
 
