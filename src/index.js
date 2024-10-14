@@ -12,6 +12,7 @@ function component() {
     
     const gameContainer = document.createElement('main');
     gameContainer.setAttribute('id','container');
+    gameContainer.setAttribute('translate','no');
     screenController(gameContainer);
 
    
