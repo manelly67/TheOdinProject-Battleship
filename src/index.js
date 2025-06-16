@@ -5,6 +5,7 @@ import "./style-tablet.css";
 import "./style.css";
 import { screenController } from "./components/screen-controller.js";
 
+
 const meta = document.createElement("meta");
 meta.setAttribute("name", "description");
 meta.setAttribute("content", "manelly67\'s exercise study project: Battleship within the curriculum The Odin Project");
