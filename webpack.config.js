@@ -13,6 +13,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Study Project Battleship',
+      lang: 'en', 
     }),
   ],
   output: {
