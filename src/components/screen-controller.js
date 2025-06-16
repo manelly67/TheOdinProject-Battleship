@@ -62,6 +62,7 @@ function screenController(arg) {
         // Create a data attribute to identify the column
         cellButton.dataset.row = i;
         cellButton.dataset.column = j;
+        cellButton.setAttribute("aria-label",`row:${i} column:${j}`);
         humanBoard.appendChild(cellButton);
       }
     }
