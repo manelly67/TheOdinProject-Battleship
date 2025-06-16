@@ -22,7 +22,7 @@ The JavaScript code separates components into an independent screen-controller f
 The project uses a class constructor to create instances of the player, ship, and gameboard objects. <br>
 According to object-oriented programming to initialize these objects.
 
-### JavaScript Function Access in the Game Controller###
+### JavaScript Function Access in the Game Controller ###
 The logic code is structured using an object-oriented approach, grouped related functions under a single object.<br>
 The main function in the game-controller file, act as the container for the sub-functions. <br>
 These sub-functions are properties of the main function and can then be accessed using the syntax game.nameFunction().
