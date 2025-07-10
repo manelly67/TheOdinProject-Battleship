@@ -7,7 +7,8 @@ https://www.theodinproject.com/lessons/node-path-javascript-battleship
 Javascript bundled with Webpack and testing with Jest
 -----------------------------------------------------
 This JavaScript project is bundled with Webpack and utilizes Test-Driven Development (TDD) with Jest for the logic.  This approach involves writing tests first and then implementing the code to pass those tests, ensuring the application logic is robust and well-structured.
-The project setup includes Webpack for bundling, Jest for testing, and Babel for handling ES6 modules.
+The project setup includes Webpack for bundling, Jest for testing, and Babel for handling ES6 modules.<br>
+The project view is https://manelly67.github.io/TheOdinProject-Battleship
 
 ### Css styles ###
 Responsive design for screens of different sizes. However in order to see both game boards at the same time, it is recommended to use on medium or large screens.
